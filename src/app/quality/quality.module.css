@@ -1,0 +1,270 @@
+.visual {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3 / 2;
+  background: var(--color-steel-100);
+}
+
+.visualImage {
+  object-fit: cover;
+  transition: transform var(--duration-medium) var(--ease-standard);
+}
+
+.visual:hover .visualImage {
+  transform: scale(1.02);
+}
+
+.copyWithVisual {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.policyVisual,
+.managementVisual {
+  aspect-ratio: 16 / 9;
+}
+
+.flowVisual {
+  aspect-ratio: 21 / 8;
+  margin-top: var(--space-12);
+}
+
+.qualityFlow {
+  position: relative;
+  display: grid;
+  margin-top: var(--space-16);
+  list-style: none;
+}
+
+.qualityFlow::before {
+  position: absolute;
+  top: 2rem;
+  bottom: 2rem;
+  left: 50%;
+  width: var(--border-width);
+  background: var(--color-gray-300);
+  content: "";
+  transform: translateX(-50%);
+}
+
+.flowStep {
+  display: grid;
+  position: relative;
+  grid-template-columns: minmax(0, 1fr) 6rem minmax(0, 1fr);
+  min-height: 12.5rem;
+  align-items: start;
+}
+
+.flowMarker {
+  display: grid;
+  position: relative;
+  z-index: 1;
+  grid-column: 2;
+  width: 4.5rem;
+  height: 4.5rem;
+  place-items: center;
+  justify-self: center;
+  background: var(--color-navy-900);
+  color: var(--color-white);
+  border: .375rem solid var(--color-offwhite);
+  border-radius: 50%;
+}
+
+.flowMarker svg {
+  width: 1.75rem;
+  height: 1.75rem;
+  fill: none;
+  stroke: currentcolor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.flowContent {
+  grid-column: 3;
+  margin-top: .625rem;
+  padding: var(--space-6) 0 var(--space-8) var(--space-8);
+  border-top: var(--border-default);
+}
+
+.flowStep:nth-child(even) .flowContent {
+  grid-column: 1;
+  grid-row: 1;
+  padding-right: var(--space-8);
+  padding-left: 0;
+}
+
+.flowNumber {
+  display: inline-block;
+  margin-bottom: var(--space-3);
+  color: var(--color-copper-600);
+  font-family: var(--font-sans-latin);
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+.flowContent h3 {
+  color: var(--color-navy-900);
+  font-size: clamp(1.25rem, 1.8vw, 1.75rem);
+  line-height: 1.45;
+}
+
+.flowContent p {
+  max-width: 34rem;
+  margin-top: var(--space-4);
+  color: var(--color-gray-600);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}
+
+.flowStep:nth-child(even) .flowContent p {
+  margin-left: auto;
+}
+
+.measurementIntro {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: var(--grid-gutter);
+  align-items: center;
+}
+
+.measurementVisual {
+  aspect-ratio: 3 / 2;
+}
+
+.improvementBody {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: var(--grid-gutter);
+  margin-top: var(--space-12);
+  align-items: stretch;
+}
+
+.improvementVisual {
+  min-height: 100%;
+  aspect-ratio: auto;
+}
+
+.improvementList {
+  display: grid;
+  border-top: var(--border-default);
+}
+
+.improvementList article {
+  padding-block: var(--space-6);
+  border-bottom: var(--border-default);
+}
+
+.improvementList h3 {
+  color: var(--color-navy-900);
+  font-size: var(--font-size-h3);
+}
+
+.improvementList p {
+  margin-top: var(--space-4);
+  color: var(--color-gray-600);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+@media (max-width: 56.249rem) {
+  .measurementIntro,
+  .improvementBody {
+    grid-template-columns: 1fr;
+  }
+
+  .improvementVisual {
+    min-height: auto;
+    aspect-ratio: 3 / 2;
+  }
+
+  .qualityFlow {
+    margin-top: var(--space-12);
+  }
+
+  .qualityFlow::before {
+    left: 1.75rem;
+    transform: none;
+  }
+
+  .flowStep {
+    grid-template-columns: 3.5rem minmax(0, 1fr);
+    min-height: 0;
+    padding-bottom: var(--space-8);
+  }
+
+  .flowMarker {
+    grid-column: 1;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-width: .25rem;
+  }
+
+  .flowMarker svg {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+
+  .flowContent,
+  .flowStep:nth-child(even) .flowContent {
+    grid-column: 2;
+    grid-row: 1;
+    margin-top: .25rem;
+    padding: var(--space-4) 0 var(--space-8) var(--space-6);
+  }
+
+  .flowStep:nth-child(even) .flowContent p {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 37.499rem) {
+  .copyWithVisual {
+    gap: var(--space-6);
+  }
+
+  .flowVisual,
+  .improvementBody {
+    margin-top: var(--space-8);
+  }
+
+  .qualityFlow {
+    margin-top: var(--space-8);
+  }
+
+  .flowVisual,
+  .policyVisual,
+  .managementVisual,
+  .measurementVisual,
+  .improvementVisual {
+    aspect-ratio: 4 / 3;
+  }
+
+  .improvementList article {
+    padding-block: var(--space-5, 1.25rem);
+  }
+
+  .flowContent,
+  .flowStep:nth-child(even) .flowContent {
+    padding-left: var(--space-4);
+  }
+
+  .flowContent h3 {
+    font-size: 1.25rem;
+  }
+
+  .flowContent p {
+    font-size: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .visualImage {
+    transition: none;
+  }
+
+  .visual:hover .visualImage {
+    transform: none;
+  }
+}

@@ -1,0 +1,81 @@
+.button {
+  display: inline-flex;
+  min-width: 2.75rem;
+  min-height: 3.25rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  padding: var(--space-3) var(--space-6);
+  border: var(--border-width) solid transparent;
+  border-radius: var(--radius-small);
+  font-size: var(--font-size-small);
+  font-weight: 700;
+  line-height: var(--line-height-label);
+  text-decoration: none;
+  transition:
+    color var(--duration-fast) var(--ease-standard),
+    background-color var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard),
+    transform var(--duration-fast) var(--ease-standard);
+}
+
+.button:active:not(:disabled, [aria-disabled="true"]) {
+  transform: translateY(1px);
+}
+
+.primary {
+  background: var(--color-copper-500);
+  color: var(--color-navy-950);
+}
+
+.primary:hover:not(:disabled, [aria-disabled="true"]) {
+  background: var(--color-copper-600);
+  color: var(--color-white);
+}
+
+.secondary {
+  background: var(--color-navy-900);
+  color: var(--color-white);
+}
+
+.secondary:hover:not(:disabled, [aria-disabled="true"]) {
+  background: var(--color-steel-700);
+}
+
+.inverse {
+  border-color: rgb(255 255 255 / 70%);
+  background: transparent;
+  color: var(--color-white);
+}
+
+.inverse:hover:not(:disabled, [aria-disabled="true"]) {
+  border-color: var(--color-white);
+  background: var(--color-white);
+  color: var(--color-navy-950);
+}
+
+.button:disabled,
+.button[aria-disabled="true"] {
+  cursor: not-allowed;
+  border-color: var(--color-gray-300);
+  background: var(--color-gray-300);
+  color: var(--color-gray-600);
+}
+
+.arrow {
+  flex: 0 0 auto;
+  font-family: var(--font-sans-latin);
+  font-size: 1.15em;
+  transition: transform var(--duration-fast) var(--ease-standard);
+}
+
+.button:hover:not(:disabled, [aria-disabled="true"]) .arrow {
+  transform: translateX(var(--space-1));
+}
+
+@media (max-width: 37.499rem) {
+  .button {
+    min-height: 3.125rem;
+    padding-inline: var(--space-6);
+  }
+}

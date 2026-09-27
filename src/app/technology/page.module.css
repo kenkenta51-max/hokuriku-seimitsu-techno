@@ -1,0 +1,58 @@
+.main { overflow: clip; }
+.section { padding-block: var(--space-section); background: var(--color-white); }
+.offwhite { background: var(--color-offwhite); }
+.summary { padding-block: var(--space-12); background: var(--color-navy-900); color: var(--color-white); }
+.summary dl { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: var(--border-width) solid rgb(255 255 255 / 30%); }
+.summary dl > div { min-height: 9rem; padding: var(--space-6) var(--space-4); border-right: var(--border-width) solid rgb(255 255 255 / 30%); border-bottom: var(--border-width) solid rgb(255 255 255 / 30%); }
+.summary dl > div:first-child { border-left: var(--border-width) solid rgb(255 255 255 / 30%); }
+.summary dt { color: var(--color-white); font-weight: 700; line-height: 1.45; }
+.summary dd { margin-top: var(--space-3); color: rgb(255 255 255 / 76%); font-size: var(--font-size-small); line-height: var(--line-height-small); }
+.summary > div > p { margin-top: var(--space-6); color: rgb(255 255 255 / 76%); font-size: var(--font-size-small); line-height: var(--line-height-small); }
+.materials { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-12) var(--grid-gutter); margin-top: var(--space-12); list-style: none; }
+.materials li { display: grid; align-content: start; border-bottom: var(--border-default); }
+.itemImage { position: relative; aspect-ratio: 3 / 2; margin: 0; overflow: hidden; background: var(--color-gray-100); }
+.itemImage img { object-fit: cover; transition: transform var(--duration-medium) var(--ease-standard); }
+.itemCopy, .processCopy { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: var(--space-4); padding-block: var(--space-6); }
+.materials span, .difficult span, .stability span { color: var(--color-steel-700); font-family: var(--font-sans-latin); font-weight: 700; letter-spacing: .08em; }
+.materials h3, .difficult h3 { color: var(--color-navy-900); font-size: var(--font-size-h3); }
+.materials p, .difficult p, .measurements dd, .stability p, .skillCopy p { color: var(--color-gray-600); font-size: var(--font-size-small); line-height: var(--line-height-small); }
+.materials p, .difficult p { margin-top: var(--space-3); }
+.capabilityTable { margin-top: var(--space-12); overflow: hidden; border-top: var(--border-default); }
+.capabilityTable table { width: 100%; border-collapse: collapse; text-align: left; }
+.capabilityTable caption { padding-bottom: var(--space-4); text-align: left; color: var(--color-navy-900); font-weight: 700; }
+.capabilityTable th, .capabilityTable td { padding: var(--space-4); border-bottom: var(--border-default); vertical-align: top; }
+.capabilityTable thead th, .capabilityTable tbody th { color: var(--color-navy-900); font-size: var(--font-size-small); }
+.capabilityTable td { color: var(--color-gray-600); font-size: var(--font-size-small); line-height: var(--line-height-small); }
+.capabilityMobile { display: none; }
+.precision { display: grid; gap: var(--space-2); margin-top: var(--space-6); color: var(--color-gray-600); font-size: var(--font-size-small); line-height: var(--line-height-small); }
+.precision strong { color: var(--color-navy-900); }
+.difficult { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: var(--space-12); list-style: none; border-top: var(--border-default); }
+.difficult li { min-width: 0; border-right: var(--border-default); border-bottom: var(--border-default); }
+.difficult li:nth-child(3n + 1) { border-left: var(--border-default); }
+.difficult .itemImage { aspect-ratio: 3 / 2; }
+.processCopy { grid-template-columns: 1fr; align-content: start; gap: var(--space-6); min-height: 18rem; padding: var(--space-6); }
+.equipmentSection { background: var(--color-gray-100); }
+.measurements { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin-top: var(--space-12); border-top: var(--border-default); }
+.measurements > div { min-width: 0; border-right: var(--border-default); border-bottom: var(--border-default); }
+.measurements > div:nth-child(3n + 1) { border-left: var(--border-default); }
+.measurements .itemImage { aspect-ratio: 3 / 2; }
+.measurementCopy { display: grid; align-content: start; gap: var(--space-4); min-height: 13rem; padding: var(--space-6); }
+.measurements dt { color: var(--color-navy-900); font-size: var(--font-size-h3); font-weight: 700; }
+.measurements dd { margin-top: 0; }
+.stability { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 var(--grid-gutter); margin-top: var(--space-12); list-style: none; border-top: var(--border-default); }
+.stability li { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: var(--space-4); padding-block: var(--space-6); border-bottom: var(--border-default); }
+.skillsGrid { display: grid; grid-template-columns: 5fr 7fr; gap: var(--grid-gutter); align-items: start; }
+.skillCopy { display: grid; gap: var(--space-6); margin-top: var(--space-12); }
+.skillsImage { min-height: 34rem; }
+.skillsImage img { object-position: center; }
+.faqSection { background: var(--color-offwhite); }
+.faqGrid { display: grid; grid-template-columns: 5fr 7fr; gap: var(--grid-gutter); }
+.faqList { border-top: var(--border-default); }
+.faqList details { border-bottom: var(--border-default); }
+.faqList summary { min-height: 3.5rem; padding: var(--space-4) var(--space-8) var(--space-4) 0; color: var(--color-navy-900); cursor: pointer; font-weight: 700; }
+.faqList p { padding: 0 var(--space-4) var(--space-6) 0; color: var(--color-gray-600); font-size: var(--font-size-small); line-height: var(--line-height-small); }
+@media (hover: hover) and (pointer: fine) { .itemImage:hover img { transform: scale(1.02); } }
+@media (max-width: 74.999rem) { .summary dl { grid-template-columns: repeat(3, minmax(0, 1fr)); }.summary dl > div:nth-child(4) { border-left: var(--border-width) solid rgb(255 255 255 / 30%); }.difficult, .measurements { grid-template-columns: repeat(2, minmax(0, 1fr)); }.difficult li, .measurements > div { border-left: 0; }.difficult li:nth-child(odd), .measurements > div:nth-child(odd) { border-left: var(--border-default); }.processCopy { min-height: 16rem; }.skillsImage { min-height: 30rem; } }
+@media (max-width: 56.249rem) { .summary dl { grid-template-columns: repeat(2, minmax(0, 1fr)); }.summary dl > div { min-height: 0; }.summary dl > div:nth-child(odd) { border-left: var(--border-width) solid rgb(255 255 255 / 30%); }.materials { grid-template-columns: 1fr; }.capabilityTable { display: none; }.capabilityMobile { display: grid; margin-top: var(--space-12); border-top: var(--border-default); }.capabilityMobile > div { display: grid; gap: var(--space-3); padding-block: var(--space-6); border-bottom: var(--border-default); }.capabilityMobile dt { color: var(--color-navy-900); font-size: var(--font-size-h3); font-weight: 700; }.capabilityMobile dd { display: grid; grid-template-columns: 8rem minmax(0, 1fr); gap: var(--space-3); color: var(--color-gray-600); font-size: var(--font-size-small); line-height: var(--line-height-small); }.capabilityMobile dd span { color: var(--color-steel-700); font-weight: 700; }.faqGrid, .skillsGrid { grid-template-columns: 1fr; }.faqList { margin-top: var(--space-8); }.skillsImage { min-height: 0; margin-top: var(--space-10); } }
+@media (max-width: 37.499rem) { .section { padding-block: var(--space-16); }.summary { padding-block: var(--space-8); }.summary dl { grid-template-columns: 1fr; }.summary dl > div { padding: var(--space-4); border-left: var(--border-width) solid rgb(255 255 255 / 30%) !important; }.materials, .capabilityMobile, .difficult, .measurements, .stability, .skillCopy { margin-top: var(--space-8); }.materials { gap: var(--space-8); }.itemCopy { grid-template-columns: 2.75rem minmax(0, 1fr); }.itemImage, .difficult .itemImage, .measurements .itemImage { aspect-ratio: 4 / 3; }.capabilityMobile > div { padding-block: var(--space-4); }.capabilityMobile dd { grid-template-columns: 6.5rem minmax(0, 1fr); }.difficult, .measurements, .stability { grid-template-columns: 1fr; }.difficult li, .difficult li:nth-child(odd), .measurements > div, .measurements > div:nth-child(odd) { border-right: 0; border-left: 0; }.processCopy { grid-template-columns: 2.75rem minmax(0, 1fr); min-height: 0; padding: var(--space-5) var(--space-4) var(--space-8); }.measurementCopy { min-height: 0; padding: var(--space-5) var(--space-4) var(--space-8); }.stability li { grid-template-columns: 2.75rem minmax(0, 1fr); }.faqList summary { padding-right: var(--space-4); } }
+@media (prefers-reduced-motion: reduce) { .itemImage img { transition: none; }.itemImage:hover img { transform: none; } }

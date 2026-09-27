@@ -1,0 +1,4 @@
+.breadcrumb { color: var(--color-gray-600); font-size: var(--font-size-small); line-height: var(--line-height-small); }
+.breadcrumb ol { display: flex; flex-wrap: wrap; gap: var(--space-2); list-style: none; }
+.breadcrumb li + li::before { margin-right: var(--space-2); color: var(--color-steel-500); content: "/"; }
+.breadcrumb a { text-underline-offset: 0.25em; }

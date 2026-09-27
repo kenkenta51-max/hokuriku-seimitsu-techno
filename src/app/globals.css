@@ -1,0 +1,218 @@
+/* Design tokens: docs/06_design-system.md */
+:root {
+  --color-navy-950: #071b29;
+  --color-navy-900: #0e2a3b;
+  --color-navy-800: #173b50;
+  --color-steel-700: #315b72;
+  --color-steel-500: #5f8194;
+  --color-steel-100: #e8eef2;
+  --color-copper-600: #a95220;
+  --color-copper-500: #c46a2d;
+  --color-copper-100: #f4e5da;
+  --color-white: #ffffff;
+  --color-offwhite: #f4f5f2;
+  --color-gray-100: #edf0f1;
+  --color-gray-300: #c9d0d4;
+  --color-gray-600: #66747d;
+  --color-gray-900: #17242c;
+  --color-success: #247a57;
+  --color-warning: #a76812;
+  --color-error: #b3261e;
+  --color-focus: #2f80ed;
+
+  --font-size-display: clamp(2.375rem, 5.2vw, 5rem);
+  --font-size-h1: clamp(2.25rem, 4.2vw, 4rem);
+  --font-size-h2: clamp(1.75rem, 3vw, 3rem);
+  --font-size-h3: clamp(1.375rem, 2vw, 1.875rem);
+  --font-size-lead: clamp(1.0625rem, 1.5vw, 1.25rem);
+  --font-size-body: 1rem;
+  --font-size-small: 0.875rem;
+  --font-size-label: 0.8125rem;
+  --font-size-stat: clamp(2.625rem, 5vw, 5rem);
+
+  --line-height-display: 1.08;
+  --line-height-heading: 1.25;
+  --line-height-lead: 1.9;
+  --line-height-body: 1.9;
+  --line-height-small: 1.7;
+  --line-height-label: 1.4;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-30: 7.5rem;
+  --space-40: 10rem;
+  --space-section: clamp(4.5rem, 9vw, 10rem);
+
+  --container-wide: 90rem;
+  --container-main: 80rem;
+  --container-text: 45rem;
+  --gutter-inline: clamp(1.25rem, 5.55vw, 5rem);
+  --grid-gutter: 1.5rem;
+
+  --breakpoint-small: 37.5rem;
+  --breakpoint-medium: 56.25rem;
+  --breakpoint-large: 75rem;
+
+  --radius-none: 0;
+  --radius-small: 0.25rem;
+  --radius-pill: 999px;
+  --border-width: 1px;
+  --border-color: var(--color-gray-300);
+  --border-default: var(--border-width) solid var(--border-color);
+
+  --duration-fast: 180ms;
+  --duration-base: 240ms;
+  --duration-medium: 450ms;
+  --duration-slow: 700ms;
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-emphasis: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --z-base: 0;
+  --z-sticky: 100;
+  --z-header: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+  --z-skip-link: 600;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 20rem;
+  background: var(--color-offwhite);
+  color: var(--color-gray-900);
+  scroll-behavior: smooth;
+  text-size-adjust: 100%;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+body {
+  --font-sans-ja: var(--font-noto-sans-jp), system-ui, sans-serif;
+  --font-sans-latin: var(--font-manrope), var(--font-noto-sans-jp), system-ui,
+    sans-serif;
+
+  min-height: 100vh;
+  overflow-x: clip;
+  background: var(--color-offwhite);
+  color: var(--color-gray-900);
+  font-family: var(--font-sans-ja);
+  font-size: var(--font-size-body);
+  font-weight: 400;
+  line-height: var(--line-height-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+ul,
+ol {
+  padding: 0;
+}
+
+img,
+picture,
+svg,
+canvas,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+textarea,
+select {
+  color: inherit;
+  font: inherit;
+}
+
+button,
+[type="button"],
+[type="submit"] {
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.2em;
+}
+
+:where(a, button, input, textarea, select, summary):focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--color-copper-100);
+  color: var(--color-navy-950);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-navy-900);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-heading);
+}
+
+@media (max-width: 37.499rem) {
+  :root {
+    --gutter-inline: 1.25rem;
+    --grid-gutter: 1rem;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

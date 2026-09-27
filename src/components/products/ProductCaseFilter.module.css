@@ -1,0 +1,97 @@
+.filterPanel {
+  display: grid;
+  gap: var(--space-6);
+  padding-block: var(--space-8);
+  border-top: var(--border-default);
+  border-bottom: var(--border-default);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.filterButton {
+  min-height: 2.75rem;
+  padding: var(--space-3) var(--space-6);
+  border: var(--border-default);
+  border-radius: var(--radius-none);
+  background: transparent;
+  color: var(--color-navy-900);
+  font-size: var(--font-size-small);
+  font-weight: 700;
+  transition:
+    background-color var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard),
+    color var(--duration-fast) var(--ease-standard);
+}
+
+.filterButton:hover {
+  border-color: var(--color-steel-700);
+  background: var(--color-steel-100);
+}
+
+.filterButton[aria-pressed="true"] {
+  border-color: var(--color-navy-900);
+  background: var(--color-navy-900);
+  color: var(--color-white);
+}
+
+.count {
+  color: var(--color-gray-600);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.emptyState {
+  display: grid;
+  gap: var(--space-4);
+  justify-items: start;
+  padding: var(--space-6);
+  border-left: 0.25rem solid var(--color-steel-700);
+  background: var(--color-gray-100);
+}
+
+.emptyState p {
+  color: var(--color-gray-600);
+}
+
+.emptyState button {
+  min-height: 2.75rem;
+  padding-inline: var(--space-4);
+  border: var(--border-width) solid var(--color-navy-900);
+  border-radius: var(--radius-none);
+  background: transparent;
+  color: var(--color-navy-900);
+  font-weight: 700;
+}
+
+.caseList[data-filter="complex"] > article:not([data-categories~="complex"]),
+.caseList[data-filter="shaft"] > article:not([data-categories~="shaft"]),
+.caseList[data-filter="vacuum"] > article:not([data-categories~="vacuum"]),
+.caseList[data-filter="fixture"] > article:not([data-categories~="fixture"]),
+.caseList[data-filter="fa"] > article:not([data-categories~="fa"]) {
+  display: none;
+}
+
+@media (max-width: 37.499rem) {
+  .filterPanel {
+    padding-block: var(--space-6);
+  }
+
+  .filters {
+    gap: var(--space-2);
+  }
+
+  .filterButton {
+    flex: 1 1 calc(50% - var(--space-2));
+    padding-inline: var(--space-3);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .filterButton {
+    transition: none;
+  }
+}

@@ -1,0 +1,235 @@
+.section {
+  overflow: clip;
+  padding-block: var(--space-section);
+  background: var(--color-offwhite);
+  color: var(--color-navy-900);
+}
+
+.heading {
+  max-width: 48rem;
+}
+
+.flow {
+  position: relative;
+  margin-top: var(--space-16);
+}
+
+.mobileFlowLine {
+  display: none;
+}
+
+.flowList {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.flowList > li {
+  position: relative;
+  min-width: 0;
+  padding: var(--space-8) var(--space-4) 0;
+}
+
+.flowList > li:first-child {
+  padding-left: 0;
+}
+
+.flowList > li:last-child {
+  padding-right: 0;
+}
+
+.flowList > li::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: var(--border-width);
+  background: var(--color-steel-500);
+  content: "";
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 620ms var(--ease-standard);
+  transition-delay: calc(var(--step-index) * 60ms);
+}
+
+.flowList > li::after {
+  position: absolute;
+  top: -0.28rem;
+  left: var(--space-4);
+  width: 0.56rem;
+  aspect-ratio: 1;
+  border: var(--border-width) solid var(--color-steel-500);
+  background: var(--color-offwhite);
+  content: "";
+  transform: translateX(-50%);
+}
+
+.flowList > li:first-child::after {
+  left: 0;
+}
+
+.flowItem {
+  display: grid;
+  align-content: start;
+  gap: var(--space-3);
+}
+
+.number {
+  color: var(--color-steel-500);
+  font-family: var(--font-manrope), sans-serif;
+  font-size: var(--font-size-small);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.name {
+  min-height: 3em;
+  margin: 0;
+  color: var(--color-navy-900);
+  font-size: var(--font-size-body);
+  font-weight: 700;
+  line-height: var(--line-height-heading);
+}
+
+.description {
+  margin: 0;
+  color: var(--color-steel-700);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.flow[data-flow-state="pending"] .flowList > li::before {
+  transform: scaleX(0);
+}
+
+.cta {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-16);
+}
+
+@media (max-width: 1024px) {
+  .section {
+    padding-block: var(--space-section);
+  }
+
+  .flowList {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    row-gap: var(--space-12);
+  }
+
+  .flowList > li:nth-child(5) {
+    padding-left: 0;
+  }
+
+  .flowList > li:nth-child(5)::after {
+    left: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .flowList {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: var(--space-12);
+  }
+
+  .flowList > li:nth-child(odd) {
+    padding-left: 0;
+  }
+
+  .flowList > li:nth-child(odd)::after {
+    left: 0;
+  }
+
+  .flowList > li:nth-child(5) {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 599px) {
+  .section {
+    padding-block: var(--space-section);
+  }
+
+  .flow {
+    margin-top: var(--space-12);
+    padding-left: var(--space-8);
+  }
+
+  .mobileFlowLine {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0.28rem;
+    display: block;
+    width: var(--border-width);
+    background: var(--color-steel-500);
+    transform: scaleY(1);
+    transform-origin: top;
+    transition: transform var(--duration-slow) var(--ease-standard);
+  }
+
+  .flowList {
+    grid-template-columns: 1fr;
+    row-gap: 0;
+  }
+
+  .flowList > li,
+  .flowList > li:first-child,
+  .flowList > li:nth-child(5),
+  .flowList > li:nth-child(odd),
+  .flowList > li:last-child {
+    padding: 0 0 var(--space-12);
+  }
+
+  .flowList > li:last-child {
+    padding-bottom: 0;
+  }
+
+  .flowList > li::before {
+    display: none;
+  }
+
+  .flowList > li::after,
+  .flowList > li:first-child::after,
+  .flowList > li:nth-child(5)::after,
+  .flowList > li:nth-child(odd)::after {
+    top: 0.38rem;
+    left: calc(var(--space-8) * -1 + 0.28rem);
+  }
+
+  .name {
+    min-height: 0;
+  }
+
+  .description {
+    font-size: var(--font-size-body);
+  }
+
+  .flow[data-flow-state="pending"] .mobileFlowLine {
+    transform: scaleY(0);
+  }
+
+  .cta {
+    margin-top: var(--space-12);
+  }
+
+  .cta > * {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flowList > li::before,
+  .mobileFlowLine {
+    transition: none;
+    transform: none;
+  }
+
+  .flow[data-flow-state="pending"] .flowList > li::before,
+  .flow[data-flow-state="pending"] .mobileFlowLine {
+    transform: none;
+  }
+}

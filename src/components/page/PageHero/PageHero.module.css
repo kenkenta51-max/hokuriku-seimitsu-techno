@@ -1,0 +1,8 @@
+.hero { padding: calc(var(--space-12) + 4rem) 0 var(--space-section); background: var(--color-offwhite); }
+.layout { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--grid-gutter); align-items: center; margin-top: var(--space-12); }
+.copy { grid-column: 1 / 7; }.figureReveal { grid-column: 7 / 13; }.figure { margin: 0; }
+.imageFrame { position: relative; overflow: hidden; aspect-ratio: 16 / 10; background: var(--color-steel-100); }.business .imageFrame, .company .imageFrame { aspect-ratio: 21 / 9; }.technology .imageFrame, .products .imageFrame, .quality .imageFrame, .recruit .imageFrame, .contact .imageFrame { aspect-ratio: 16 / 9; }
+.image { object-fit: cover; object-position: center; transition: transform var(--duration-medium) var(--ease-standard); }.imageFrame:hover .image { transform: scale(1.02); }
+@media (max-width: 56.249rem) { .hero { padding-top: calc(var(--space-12) + 3.5rem); }.layout { grid-template-columns: 1fr; margin-top: var(--space-8); }.copy, .figureReveal { grid-column: auto; }.figureReveal { margin-top: var(--space-4); } }
+@media (max-width: 37.499rem) { .hero { padding-top: calc(var(--space-8) + 3.5rem); padding-bottom: var(--space-16); }.layout { gap: var(--space-6); }.about .imageFrame { aspect-ratio: 4 / 3; }.business .imageFrame { aspect-ratio: 16 / 10; }.technology .imageFrame, .products .imageFrame, .quality .imageFrame, .company .imageFrame, .recruit .imageFrame, .contact .imageFrame { aspect-ratio: 4 / 3; } }
+@media (prefers-reduced-motion: reduce) { .image { transition: none; }.imageFrame:hover .image { transform: none; } }

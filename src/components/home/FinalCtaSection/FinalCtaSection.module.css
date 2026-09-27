@@ -1,0 +1,127 @@
+.section {
+  position: relative;
+  display: grid;
+  min-height: 35rem;
+  overflow: clip;
+  place-items: center;
+  background: var(--color-navy-950);
+  color: var(--color-white);
+}
+
+.backgroundImage,
+.overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.backgroundImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.overlay {
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgb(7 27 41 / 78%), rgb(7 27 41 / 72%)),
+    linear-gradient(180deg, rgb(7 27 41 / 28%), rgb(7 27 41 / 52%));
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+}
+
+.content {
+  max-width: 54rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.title {
+  color: var(--color-white);
+  font-size: clamp(2rem, 3.15vw, 3rem);
+}
+
+.description {
+  max-width: 48rem;
+  margin: var(--space-8) auto 0;
+  color: rgb(255 255 255 / 94%);
+  line-height: var(--line-height-body);
+}
+
+.notes {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+  color: rgb(255 255 255 / 88%);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.notes p + p {
+  padding-left: var(--space-6);
+  border-left: var(--border-width) solid rgb(255 255 255 / 38%);
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}
+
+.actions > * {
+  min-width: 15rem;
+}
+
+@media (max-width: 767px) {
+  .section {
+    min-height: 0;
+    padding-block: var(--space-section);
+  }
+
+  .backgroundImage {
+    object-position: 42% center;
+  }
+
+  .overlay {
+    background: rgb(7 27 41 / 84%);
+  }
+
+  .content {
+    text-align: left;
+  }
+
+  .title {
+    font-size: var(--font-size-h2);
+  }
+
+  .description {
+    margin-top: var(--space-6);
+  }
+
+  .notes {
+    display: grid;
+    justify-content: stretch;
+    gap: var(--space-3);
+    margin-top: var(--space-6);
+  }
+
+  .notes p + p {
+    padding: var(--space-3) 0 0;
+    border-top: var(--border-width) solid rgb(255 255 255 / 38%);
+    border-left: 0;
+  }
+
+  .actions {
+    display: grid;
+    gap: var(--space-3);
+    margin-top: var(--space-8);
+  }
+
+  .actions > * {
+    width: 100%;
+    min-width: 0;
+  }
+}

@@ -1,0 +1,12 @@
+.main {
+  min-height: 36rem;
+}
+
+.inner {
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  gap: var(--space-8);
+  min-height: 36rem;
+  padding-block: var(--space-16);
+}

@@ -1,0 +1,55 @@
+.heading {
+  display: grid;
+  gap: var(--space-4);
+  max-width: var(--container-text);
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-steel-700);
+  font-family: var(--font-sans-latin);
+  font-size: var(--font-size-label);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: var(--line-height-label);
+  text-transform: uppercase;
+}
+
+.label::before {
+  width: var(--space-8);
+  height: var(--border-width);
+  background: currentColor;
+  content: "";
+}
+
+.title {
+  color: var(--color-navy-900);
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-heading);
+}
+
+.description {
+  color: var(--color-gray-600);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}
+
+.center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.center .label {
+  justify-content: center;
+}
+
+.dark .label {
+  color: var(--color-steel-500);
+}
+
+.dark .title,
+.dark .description {
+  color: var(--color-white);
+}
